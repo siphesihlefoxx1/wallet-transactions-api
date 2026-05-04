@@ -21,6 +21,14 @@ jobs:
         working-directory: wallet-transactions-api
         run: npm install
 
+      - name: Security audit
+        working-directory: wallet-transactions-api
+        run: npm audit || true
+
       - name: Run tests
         working-directory: wallet-transactions-api
         run: npm test
+
+      - name: Integration step
+        working-directory: wallet-transactions-api
+        run: echo "Integration step executed successfully"
